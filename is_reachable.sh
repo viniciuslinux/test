@@ -12,7 +12,7 @@ if [[ ! `egrep -m1 -o  default <(route)` == "default" ]]; then
 	echo "Warning! There is no default gateway" 
 	read -p "Abort procedure ?[Y][n] " op
 	op=${op:0:1}
-	[[ "${op,}" == "n" ]] && exit 1 
+	[[ ! "${op,}" == "n" ]] && exit 1 
 fi
 
 ## Ping the destination server by name
